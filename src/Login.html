@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-header">Log in</div>
+        <div class="login-box">
+            <form id="login-form" class="login-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" required autocomplete="current-password">
+                </div>
+                <div class="form-group">
+                    <label>Select Role</label>
+                    <div class="radio-group">
+                        <label for="admin">
+                            <input type="radio" id="admin" name="role" value="admin" required>
+                            Admin
+                        </label>
+                        <label for="user">
+                            <input type="radio" id="user" name="role" value="user" required>
+                            User
+                        </label>
+                    </div>
+                </div>
+                <div class="form-links-column">
+                    <a href="/signup">Don't have an Account? Sign Up</a>
+                    <a href="/PassRecover">Forgot Password</a>
+                </div>
+                <div>
+                    <button id="login-btn" type="submit" class="login-button" onclick="handleLogin()">Log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/Login.js"></script>
+</body>
+</html>

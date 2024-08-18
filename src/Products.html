@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="stylesheet" href="Product.css" />
+</head>
+
+<body>
+    <!-- Add product form -->
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <img src="../assets/truck.png" alt="photo"/>
+            <form id="productForm">
+                
+                <!-- Name Input -->
+                <div class="formbold-input-group">
+                    <label for="name" class="formbold-form-label"> Product Name </label>
+                    <input type="text" name="name" id="productName" placeholder="Enter your product name" class="formbold-form-input" />
+                </div>
+    
+                <!-- Email Input -->
+                <div class="formbold-input-group">
+                    <label for="email" class="formbold-form-label"> Price </label>
+                    <input type="number" name="price" id="productPrice" placeholder="Enter price" class="formbold-form-input" />
+                </div>
+    
+                <!-- Quantity Input with + and - Buttons -->
+                <div class="formbold-input-group">
+                    <label for="quantity" class="formbold-form-label"> Quantity </label>
+                    <div class="quantity-input">
+                        <input type="number" name="quantity" id="quantity" class="formbold-form-input quantity" value="0" min="0" max="100" step="1" />
+                        <button class="remove-btn" type="button" id="decrementBtn">-</button>
+                        <button class="add-btn" type="button" id="incrementBtn">+</button>
+                    </div>
+                </div>
+                
+    
+                <!-- Suggestions/Comments Input -->
+                <div class="formbold-input-group">
+                    <label for="message" class="formbold-form-label"> Any comments or suggestions </label>
+                    <textarea rows="6" name="message" id="message" placeholder="Type here..." class="formbold-form-input"></textarea>
+                </div>
+    
+                <button class="formbold-btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="../scripts/main.js"></script>
+</body>
+
+</html>

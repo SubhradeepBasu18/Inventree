@@ -1,0 +1,7 @@
+export const config = {
+    APPWRITE_ENDPOINT: import.meta.env.VITE_APPWRITE_ENDPOINT,
+    APPWRITE_PROJECT_ID: import.meta.env.VITE_APPWRITE_PROJECT_ID,
+    DATABASE_ID: import.meta.env.VITE_DATABASE_ID,
+    SALES_COLLECTION_ID: import.meta.env.VITE_SALES_COLLECTION_ID,
+    PRODUCTS_COLLECTION_ID: import.meta.env.VITE_PRODUCTS_COLLECTION_ID,
+};
