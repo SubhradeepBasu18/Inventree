@@ -1,4 +1,4 @@
-import { client, account } from "../appwrite/app.js";
+import { account } from "../appwrite/app.js";
 
 function handleLogin() {
     const loginForm = document.getElementById('login-form');
@@ -10,6 +10,7 @@ function handleLogin() {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value.trim();
         const selectedRole = document.querySelector('input[name="role"]:checked')?.value;
@@ -18,7 +19,7 @@ function handleLogin() {
             console.error('Please fill in all fields.');
             return;
         }
-
+        console.log('Name:', name);        
         console.log('Login Details:');
         console.log('Email:', email);
         console.log('Password:', password);
@@ -48,4 +49,6 @@ function handleLogin() {
 
 document.addEventListener('DOMContentLoaded', () => {
     handleLogin();
+    // const result = account.get();
+    // console.log(result);
 });
