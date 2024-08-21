@@ -1,4 +1,6 @@
-import { account } from "../appwrite/app.js";
+import { Query } from "appwrite";
+import { account, databases } from "../appwrite/app.js";
+import { config } from "../appwrite/config.js";
 
 function handleLogin() {
     const loginForm = document.getElementById('login-form');
@@ -32,11 +34,12 @@ function handleLogin() {
 
             if (response.selectedRole === 'admin') {
                 console.log('Admin logged in');
-                // Redirect to admin page
+                // handleAcount();
+                window.location.href = '../index.html';
 
             } else {
                 console.log('User logged in');
-                // Redirect to user page
+                // handleAcount();
                 window.location.href = '../index.html';
             }
         }).catch(function (error) {
@@ -47,8 +50,56 @@ function handleLogin() {
     });
 }
 
+async function getAccount(){
+    try{
+        const user = await account.get();
+        const userId = user.$id;
+
+        console.log('User ID:', userId);
+
+        const response = await databases.listDocuments(
+            config.DATABASE_ID,
+            config.ACCOUNTS_COLLECTION_ID,
+            [
+                Query.equal('userId', userId)
+            ]
+        )
+
+        if(response.total > 0){
+            const document = response.documents[0];
+
+            console.log('User role:', document.role);
+            return{
+                userId: document.userId,
+                role: document.role
+            };
+        }else{
+            console.error('User not found');
+            return null;
+        }
+    }catch(error){
+        console.error('Failed to fetch user role:', error);
+        return null;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     handleLogin();
     // const result = account.get();
     // console.log(result);
+    getAccount().then(userRoleData => {
+        if (userRoleData) {
+            console.log('User Role Data:', userRoleData);
+            // Perform actions based on user role
+            if (userRoleData.role === 'admin') {
+                // Redirect to admin dashboard, etc.
+                window.location.href = '../index.html';
+                console.log('User is an admin');
+            } else {
+                // Redirect to user dashboard, etc.
+                window.location.href = '../index.html';
+                console.log('User is a regular user');
+            }
+        }
+    });
 });

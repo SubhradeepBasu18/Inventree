@@ -1,6 +1,7 @@
-import { account, client } from "../appwrite/app.js";
+import { account, client, databases } from "../appwrite/app.js";
 import {v4 as uuidv4} from 'uuid';
 import { Users } from "node-appwrite";
+import { config } from "../appwrite/config.js";
 
 const users = new Users(client);
 
@@ -30,8 +31,8 @@ function handleSignUp() {
 
         promise.then(function(response){
             console.log('Signup successful:',response);
-            assignUserLabel(response.$id, selectedRole);
-            if(response.role === 'admin'){
+            assignUserLabel(userId, selectedRole);
+            if(response.role == 'admin'){
                 console.log('Admin logged in');
                 alert('Admin created successfully');
                 // Redirect to admin page
@@ -39,7 +40,7 @@ function handleSignUp() {
                 console.log('User logged in');
                 alert('User created successfully');
                 // Redirect to user page
-                window.location.href = '../index.html';
+                // window.location.href = '../index.html';
             }
         })
 
@@ -49,14 +50,26 @@ function handleSignUp() {
 
 function assignUserLabel(userId, role) {
     const label = role === 'admin' ? 'admin' : 'user';
+    console.log('Assigning label:', label);
+    console.log('User ID:', userId);
+    
 
-    users.updateLabels(userId, [label])
-        .then(response => {
-            console.log('Label assigned:', response);
-        })
-        .catch(error => {
-            console.error('Failed to assign label:', error);
-        });
+   //add the userid and role in database collection named accounts
+    const promise = databases.createDocument(
+    config.DATABASE_ID,
+    config.ACCOUNTS_COLLECTION_ID,
+    'unique()',
+    {
+        userId: userId,
+        role: role
+    }
+    );
+
+    promise.then(function(response){
+        console.log('Role assigned successfully:',response);
+    }).catch(function(error){
+        console.error('Role assignment failed:',error);
+    });
 }
 
 

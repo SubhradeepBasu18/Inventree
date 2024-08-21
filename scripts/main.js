@@ -1,6 +1,8 @@
 import './charts.js';
 import './sidebar.js';
 import { addProduct, getProducts } from './products.js';
+import './Profile.js'
+import './Signout.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('productForm');

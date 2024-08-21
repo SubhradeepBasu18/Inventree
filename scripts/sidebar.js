@@ -9,11 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (open) {
             sidebar.style.transform = 'translateX(0)';
             mainContent.classList.add('shifted');
-            userlists.classList.add('shifted');
         } else {
             sidebar.style.transform = 'translateX(-100%)';
             mainContent.classList.remove('shifted');
-            userlists.classList.remove('shifted');
+            
         }
     }
 

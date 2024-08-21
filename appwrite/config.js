@@ -4,4 +4,5 @@ export const config = {
     DATABASE_ID: import.meta.env.VITE_DATABASE_ID,
     SALES_COLLECTION_ID: import.meta.env.VITE_SALES_COLLECTION_ID,
     PRODUCTS_COLLECTION_ID: import.meta.env.VITE_PRODUCTS_COLLECTION_ID,
+    ACCOUNTS_COLLECTION_ID: import.meta.env.VITE_ACCOUNTS_COLLECTION_ID,
 };
