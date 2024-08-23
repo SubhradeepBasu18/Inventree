@@ -1,4 +1,4 @@
-import { databases } from '../appwrite/app.js';
+import { account,databases } from '../appwrite/app.js';
 import { config } from '../appwrite/config.js';
 
 export function addProduct(name, price, quantity) {
