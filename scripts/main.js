@@ -35,43 +35,45 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Form submission handler
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
+    // form.addEventListener('submit', async (event) => {
+    //     event.preventDefault();
 
-        const productName = document.getElementById('productName').value.trim();
-        const productPrice = parseFloat(document.getElementById('productPrice').value);
-        const quantity = parseInt(quantityInput.value, 10);
+    //     const productName = document.getElementById('productName').value.trim();
+    //     const productPrice = parseFloat(document.getElementById('productPrice').value);
+    //     const quantity = parseInt(quantityInput.value, 10);
 
-        if (!productName || isNaN(productPrice) || isNaN(quantity)) {
-            console.error('Invalid input. Please enter valid product details.');
-            return;
-        }
+    //     if (!productName || isNaN(productPrice) || isNaN(quantity)) {
+    //         console.error('Invalid input. Please enter valid product details.');
+    //         return;
+    //     }
 
-        // Check if the user is logged in
-        // const isLoggedIn = await checkSession();
-        if (!isLoggedIn) {
-            alert('Please login to add products');
-            return;
-        }
+    //     // Check if the user is logged in
+    //     // const isLoggedIn = await checkSession();
+    //     if (!isLoggedIn) {
+    //         alert('Please login to add products');
+    //         return;
+    //     }
 
-        // Get the user's role
-        const userAccount = await getAccount();
-        if (!userAccount) {
-            alert('Failed to retrieve user account information');
-            return;
-        }
+    //     // Get the user's role
+    //     const userAccount = await getAccount();
+    //     if (!userAccount) {
+    //         alert('Failed to retrieve user account information');
+    //         return;
+    //     }
 
-        const role = userAccount.role;
-        if (role === 'admin') {
-            console.log('Adding product:', productName, productPrice, quantity);
-            addProduct(productName, productPrice, quantity);
-        } else {
-            alert('You are not authorized to add products');
-        }
-        // addProduct(productName, productPrice, quantity);
+    //     const role = userAccount.role;
+    //     console.log('User role before adding to database:', role);
+        
+    //     if (role === 'admin') {
+    //         console.log('Adding product:', productName, productPrice, quantity);
+    //         addProduct(productName, productPrice, quantity);
+    //     } else {
+    //         alert('You are not authorized to add products');
+    //     }
+    //     // addProduct(productName, productPrice, quantity);
 
-        form.reset();
-        quantityInput.value = 0;
-    });
+    //     form.reset();
+    //     quantityInput.value = 0;
+    // });
 
 });

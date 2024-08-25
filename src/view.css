@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(145deg, #d7d7e8, #f4f4f4); /* Soft gradient background */
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+
+.order-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two cards per row */
+    gap: 20px; /* Space between cards */
+}/* General page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.page-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Order cards container */
+.order-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Order card */
+.order-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Product info */
+.product-info {
+    margin: 15px 0;
+}
+
+.product-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #636274;
+    margin-bottom: 10px;
+}
+
+.product-quantity {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .order-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-card {
+        width: 100%;
+    }
+}
+
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+}
