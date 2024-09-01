@@ -1,33 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(145deg, #d7d7e8, #f4f4f4); /* Soft gradient background */
-}
-
-.container {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-
-.order-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two cards per row */
-    gap: 20px; /* Space between cards */
-}/* General page styles */
-body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f2f5;
     margin: 0;
@@ -125,4 +96,51 @@ footer{
     padding: 10px;
     width: 100%;
     bottom: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligns all children (including the logo) to the right */
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+
+.Logo {
+    max-width: 10%;
+    border-radius: 40px;
+    margin-left: auto; /* Ensures the logo is pushed to the right */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.home-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #636274;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-top: 36px;
+}
+
+.home-btn i, .home-icon {
+    margin-right: 8px;
+}
+
+.home-btn:hover {
+    background-color: #3b82f6;
 }

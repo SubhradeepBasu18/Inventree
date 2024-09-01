@@ -9,13 +9,16 @@ export async function getProducts(){
             const products = response.documents;
             console.log('Products:', products);
             renderProductCards(products);
+            return products;
         }
         else{
             console.log('No products found');
+            return [];
         }
 
     } catch (error) {
         console.error('Failed to get products:', error);
+        return [];
     }
 }
 
@@ -39,5 +42,5 @@ function renderProductCards(products){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    getProducts();
+    const product = getProducts();
 })

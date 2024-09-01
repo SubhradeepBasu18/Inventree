@@ -19,8 +19,23 @@ export function addProduct(name, price, quantity) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('productForm')
+    const form = document.getElementById('productForm');  
+    const incrementBtn = document.getElementById('incrementBtn');
+    const decrementBtn = document.getElementById('decrementBtn');
     const quantityInput = document.getElementById('quantity');
+
+    incrementBtn.addEventListener('click', () => {
+        const currentQuantity = parseInt(quantityInput.value, 10);
+        quantityInput.value = currentQuantity + 1;
+    });
+
+    // Decrement button handler
+    decrementBtn.addEventListener('click', () => {
+        const currentQuantity = parseInt(quantityInput.value, 10);
+        if (currentQuantity > 0) {
+            quantityInput.value = currentQuantity - 1;
+        }
+    });
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
