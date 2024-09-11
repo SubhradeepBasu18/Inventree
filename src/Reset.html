@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="Reset.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img class="Logo" src="../assets/logo.jpg" alt="Logo">
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Reset Your Password</h2>
+            <form id="resetPasswordForm">
+                <div class="input-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" id="submit">Reset Password</button>
+            </form>
+            <div id="message"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Your Company. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../scripts/reset.js"></script>
+</body>
+</html>

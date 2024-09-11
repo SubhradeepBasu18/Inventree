@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="Forgot-style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img class="Logo" src="../assets/logo.jpg" alt="Company Logo">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+                <h2>Forgot Password</h2>
+                <form id="forgotPasswordForm" method="POST" action="#"> <!-- Update action with your endpoint -->
+
+                    <!-- Email Input -->
+                    <div class="formbold-input-group">
+                        <label for="email" class="formbold-form-label"> Email Address </label>
+                        <input type="email" name="email" id="email" class="formbold-form-input" placeholder="Enter your email" required />
+                    </div>
+
+                    <button id="submit" class="formbold-btn" type="submit">Reset Password</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../scripts/Forgot-pass.js"></script> <!-- Link to your JS file if needed -->
+</body>
+</html>

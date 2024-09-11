@@ -1,0 +1,93 @@
+/* Header Styles */
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligns content to the right */
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+
+.Logo {
+    max-width: 7%;
+    border-radius: 40px;
+    margin-right: 36px;
+
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Ensures the logo stays on the right */
+    width: 100%;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    min-height: 80vh; /* Ensures footer stays at the bottom of the page */
+}
+
+.formbold-main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjusts height minus header and footer */
+}
+
+.formbold-form-wrapper {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formbold-input-group {
+    margin-bottom: 15px;
+}
+
+.formbold-form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formbold-form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button Styles */
+.formbold-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formbold-btn:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0;
+}
