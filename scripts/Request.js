@@ -1,4 +1,3 @@
-// import { getProducts } from './view-orders'; // Ensure the correct path
 import { databases } from "../appwrite/app";
 import { config } from "../appwrite/config";
 
@@ -72,9 +71,72 @@ function incDecBtn(){
     });
 }
 
+function showModal(message) {
+    const modal = document.getElementById('customModal');
+    const closeButton = document.querySelector('.close');
+    const modalMessage = document.getElementById('modalMessage');
+
+    // Set the message in the modal
+    modalMessage.textContent = message;
+
+    // Display the modal
+    modal.style.display = 'block';
+
+    // Close the modal when the user clicks on the close button
+    closeButton.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // Close the modal when the user clicks outside of it
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
+// Example usage:
+// showModal("Your operation was completed successfully!");
+
+
+const productForm = document.getElementById('productForm');
+
+function handleRequests(event){
+
+    const productName = document.getElementById('productName').value.trim();
+    const price = parseFloat(document.getElementById('price').value);
+    const quantity = parseInt(document.getElementById('quantity').value, 10);
+
+    event.preventDefault();
+    console.log('Product details:', productName, price, quantity);
+    
+    if (!productName || isNaN(price) || isNaN(quantity)) {
+        console.error('Invalid input. Please enter valid product details.');
+        return;
+    }
+
+    const productData = {
+        name: productName,
+        price: price,
+        quantity: quantity
+    };
+
+    databases.createDocument(config.DATABASE_ID,config.SALES_COLLECTION_ID, 'unique()', productData)
+        .then(response => {
+            console.log('Product added:', response);
+            showModal('Product added successfully!');
+        })
+        .catch(error => {
+            console.error('Failed to add product:', error);
+            showModal('Failed to add product. Please try again.');
+        });
+}
+
+productForm.addEventListener('submit', handleRequests);
+
 window.onload = () => {
     displayProducts();
-    incDecBtn(); // Set up quantity buttons
+    incDecBtn();
 };
 
 window.updatePrice = updatePrice; // Ensure updatePrice is available globally

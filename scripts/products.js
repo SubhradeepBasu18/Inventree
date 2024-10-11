@@ -2,6 +2,30 @@ import { account,databases } from '../appwrite/app.js';
 import { config } from '../appwrite/config.js';
 import { checkSession, getAccount } from './Login.js';
 
+function showModal(message) {
+    const modal = document.getElementById('customModal');
+    const closeButton = document.querySelector('.close');
+    const modalMessage = document.getElementById('modalMessage');
+
+    // Set the message in the modal
+    modalMessage.textContent = message;
+
+    // Display the modal
+    modal.style.display = 'block';
+
+    // Close the modal when the user clicks on the close button
+    closeButton.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // Close the modal when the user clicks outside of it
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
 export function addProduct(name, price, quantity) {
     const productData = {
         name: name,
@@ -52,14 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // const isLoggedIn = await checkSession();
         const isLoggedIn = await checkSession();
         if (!isLoggedIn) {
-            alert('Please login to add products');
+            showModal('Please login to add products');
             return;
         }
 
         // Get the user's role
         const userAccount = await getAccount();
         if (!userAccount) {
-            alert('Failed to retrieve user account information');
+            showModal('Failed to retrieve user account information');
             return;
         }
 
@@ -69,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (role === 'admin') {
             console.log('Adding product:', productName, productPrice, quantity);
             addProduct(productName, productPrice, quantity);
-            alert('Product added successfully');
+            showModal('Product added successfully');
         } else {
-            alert('You are not authorized to add products');
+            showModal('You are not authorized to add products');
         }
         // addProduct(productName, productPrice, quantity);
 

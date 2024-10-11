@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.location.href = '../index.html';
                 })
                 .catch(error => {
+                    showModal('Failed to logout! Please try again.');
                     console.error('Failed to logout:', error);
                 });
         });

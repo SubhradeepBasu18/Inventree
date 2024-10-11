@@ -105,3 +105,50 @@ body {
 .signup-button:hover {
     background-color: #3b82f6;
 }
+
+
+
+/* The modal (hidden by default) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px; /* Increased padding for height */
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; /* Increased max width */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for better visibility */
+}
+
+/* Modal message */
+.modal-content p {
+    font-size: 18px; /* Increased font size */
+    line-height: 1.5; /* Added line height for better readability */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

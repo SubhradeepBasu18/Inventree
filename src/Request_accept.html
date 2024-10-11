@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Inventory Requests</title>
+    <link rel="stylesheet" href="Request_accept.css">
+</head>
+<body>
+
+    <!-- Admin Inventory Requests Page -->
+    <div class="container">
+        <!-- This section is shown only to admins -->
+        <div id="admin-section" class="hidden">
+            <header>
+                <h1>Inventory Requests</h1>
+            </header>
+            <table id="request-table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Action</th> <!-- New column for Accept/Reject buttons -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be populated dynamically by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- This section is shown to non-admins -->
+        <div id="no-access" class="hidden">
+            <p>You do not have permission to view this page.</p>
+        </div>
+        <!-- This section is shown when no user is logged in -->
+        <div id="not-loggedIn" class="hidden">
+            <p>Please log in to view this page.</p>
+        </div>
+         
+    </div>
+
+    <script type="module" src="../scripts/Request_accept.js"></script>
+</body>
+</html>

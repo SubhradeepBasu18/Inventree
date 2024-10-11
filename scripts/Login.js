@@ -2,6 +2,30 @@ import { Query } from "appwrite";
 import { account, databases } from "../appwrite/app.js";
 import { config } from "../appwrite/config.js";
 
+function showModal(message) {
+    const modal = document.getElementById('customModal');
+    const closeButton = document.querySelector('.close');
+    const modalMessage = document.getElementById('modalMessage');
+
+    // Set the message in the modal
+    modalMessage.textContent = message;
+
+    // Display the modal
+    modal.style.display = 'block';
+
+    // Close the modal when the user clicks on the close button
+    closeButton.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // Close the modal when the user clicks outside of it
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
 function handleLogin() {
     const loginForm = document.getElementById('login-form');
     if (!loginForm) {
@@ -32,6 +56,7 @@ function handleLogin() {
                 checkUserRoleAndRedirect();
             })
             .catch(error => {
+                showModal('Login failed! Please check your credentials and try again.');
                 console.error('Login failed:', error);
             });
 
@@ -45,11 +70,11 @@ async function checkUserRoleAndRedirect() {
         if (userRoleData) {
             if (userRoleData.role === 'admin') {
                 console.log('User is an admin');
-                alert('Welcome Admin!'); // Display a welcome message
+                showModal('Welcome Admin!'); // Display a welcome message
                 // window.location.href = '../index.html'; // Redirect to the admin dashboard
             } else {
                 console.log('User is a regular user');
-                alert('Welcome User!'); // Display a welcome message
+                showModal('Welcome User!'); // Display a welcome message
                 // window.location.href = '../index.html'; // Redirect to the user dashboard
             }
         } else {

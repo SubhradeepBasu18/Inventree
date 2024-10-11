@@ -1,43 +1,57 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
+/* Header Styles */
 header {
     background-color: #333;
     color: white;
     padding: 15px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 100%;
+    top: 0;
     z-index: 2;
 }
 
 .Logo {
-    max-width: 10%;
+    max-width: 7%;
     border-radius: 40px;
+    margin-right: 36px;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* Main content takes up remaining space to push footer down */
 main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
+/* The form container now expands */
 .form-container {
     background: white;
-    padding: 20px;
+    padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;  /* Increased width for better appearance */
+    width: 100%;
+    margin: auto; /* Ensure it stays centered */
 }
 
+/* Form inputs and buttons */
 .input-group {
     margin-bottom: 15px;
 }
@@ -72,14 +86,40 @@ button:hover {
     background-color: #45a049;
 }
 
-#message {
-    color: red;
-    margin-top: 10px;
-}
-
+/* Footer Styles */
 footer {
     background-color: #333;
     color: white;
-    text-align: center;
     padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Home button on the left */
+.home-btn {
+    padding: 10px 20px;
+    background-color: #636274;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.home-btn i, .home-icon {
+    margin-right: 8px;
+}
+
+.home-btn:hover {
+    background-color: #3b82f6;
+}
+
+#message {
+    color: red;
+    margin-top: 10px;
 }
