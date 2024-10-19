@@ -1,29 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="./src/style.css">
     <link rel="icon" href="assets/icons8-factory-50.png" type="image/png">
-    <title>Inventree</title>
-  </head>
-  <body>
-    <div id="app">
-        <header>
-            <!-- Hamburger icon -->
-            <div class="hamburger" id="hamburger">
-                &#9776;
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>
+        <div class="header-container">
+            <h1>EaseMart</h1>
+            <div class="auth-buttons">
+                <button class="login-btn"><a href="./src/Login.html">Login</a></button>
+                <button class="signup-btn">Sign Up</button>
             </div>
-            <!-- Header -->
-            <div class="header-content">
-                <button class="login-btn" id="login-btn"><a href="./src/Login.html">Login</a></button>
-                <h1 class="Logo">Inventree</h1>
-            </div>
-        </header>
-        <!-- Side-bar -->
+        </div>
+    </header>
+    <!-- Sidebar and Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h2 id="name">Login in to view details</h2>
+                <h2 id="name">Login to view details</h2>
                 <span class="close-btn" id="close-btn">&times;</span>
             </div>
             <div class="profile-section">
@@ -47,54 +50,48 @@
             </ul>
             <button class="logout-btn" id="logout-btn">Logout</button>
         </div>
-    
-        <div class="main-content" id="mainContent">
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-number">4</div>
-                        <div class="card-text">Total Users</div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="more-info">More info <span>&#10142;</span></a>
-                    </div>
+        <!-- Main Content -->
+        <main>
+            <div class="content">
+                <div class="logo">
+                    <img src="assets/easemart-high-resolution-logo.svg" alt="Inventree Logo" class="logoImg">
                 </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-number">1</div>
-                        <div class="card-text">Active Users</div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="more-info">More info <span>&#10142;</span></a>
-                    </div>
+                <!-- <h2 class="WelcomeMsg">Welcome to EaseMart</h2> -->
+                <p class="TagLine">Your Easy Way to Freshness</p>
+                
+                <!-- Images Section -->
+                <div class="images">
+                    <img src="assets/grocery.jpg" alt="grocery" class="grocery">
+                    <img src="assets/grocery2.jpg" alt="Warehouse" class="warehouse">
                 </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-number">5</div>
-                        <div class="card-text">Total Employees</div>
+                
+                <!-- Info Cards Section -->
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="assets/cart-check-svgrepo-com.svg" alt="Track Inventory">
+                        <h3>Order Inventory</h3>
+                        <p>Easily order products for your outlet.</p>
                     </div>
-                    <div class="card-footer">
-                        <a href="#" class="more-info">More info <span>&#10142;</span></a>
+                    <div class="card">
+                        <img src="assets/user-management-svgrepo-com.svg" alt="User Management">
+                        <h3>User Management</h3>
+                        <p>Manage user roles and access within the system.</p>
                     </div>
-                </div>
-            </div>
-    
-            <!-- Charts Section -->
-            <h2 class="analytics-title">Analytics</h2>
-            <div class="charts-container">
-                <div class="chart">
-                    <canvas id="salesChart"></canvas>
-                </div>
-                <div class="chart">
-                    <canvas id="stockChart"></canvas>
+                    <div class="card">
+                        <img src="assets/products-svgrepo-com.svg" alt="Sales Reports">
+                        <h3>View inventory</h3>
+                        <p>View all available products with us.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+        
     </div>
-    <footer>
-        <p>&copy; 2021 Inventree</p>
-    </footer>
+    <!-- Footer Section -->
+<footer>
+    <p>&copy; 2021 Inventree</p>
+</footer>
+
     <script type="module" src="./scripts/main.js"></script>
-       <!-- <script src="../scripts/Login.js"></script> -->
-  </body>
+</body>
 </html>
