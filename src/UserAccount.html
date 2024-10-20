@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account</title>
+    <link rel="stylesheet" href="UserAccount.css">
+</head>
+<body>
+
+    <!-- Fixed Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html">
+                <button class="home-btn">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <!-- User Account Section -->
+    <div class="container">
+        <div class="user-info">
+            <h1>Account Details</h1>
+            <p id="profileName"><strong>Name:</strong></p>
+            <p id="profileEmail"><strong>Email:</strong> </p>
+            <p id="profileRole"><strong>Role:</strong></p>
+        </div>
+
+        <!-- Order History Table -->
+        <div class="order-history">
+            <h2>Order History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Order rows populated dynamically -->
+                     <!-- Dummy data -->
+                    <!-- <tr>
+                        <td>12345</td>
+                        <td>2024-09-12</td>
+                        <td>PS5</td>
+                        <td>1</td>
+                        <td>$499</td>
+                        <td>Delivered</td>
+                    </tr>
+                    <tr>
+                        <td>67890</td>
+                        <td>2024-10-01</td>
+                        <td>iPhone 13</td>
+                        <td>1</td>
+                        <td>$799</td>
+                        <td>Shipped</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EaseMart</p>
+    </footer>
+
+    <script type="module" src="../scripts/UserAccount.js"></script>
+</body>
+</html>

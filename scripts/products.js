@@ -26,16 +26,16 @@ function showModal(message) {
     };
 }
 
-export function addProduct(name, price, quantity) {
+export function addProduct(name, price, quantity,userId) {
     const productData = {
         name: name,
         price: price,
-        quantity: quantity
+        quantity: quantity,
     };
 
     databases.createDocument(config.DATABASE_ID,config.PRODUCTS_COLLECTION_ID, 'unique()', productData)
         .then(response => {
-            console.log('Product added:', response);
+            console.log(`${userId} added Product :`, response);
         })
         .catch(error => {
             console.error('Failed to add product:', error);
@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get the user's role
         const userAccount = await getAccount();
+        console.log('User account:', userAccount);
+        
         if (!userAccount) {
             showModal('Failed to retrieve user account information');
             return;
@@ -92,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (role === 'admin') {
             console.log('Adding product:', productName, productPrice, quantity);
-            addProduct(productName, productPrice, quantity);
+            addProduct(productName, productPrice, quantity,userAccount.$id);
             showModal('Product added successfully');
         } else {
             showModal('You are not authorized to add products');

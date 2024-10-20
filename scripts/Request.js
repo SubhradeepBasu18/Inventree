@@ -1,5 +1,6 @@
 import { databases } from "../appwrite/app";
 import { config } from "../appwrite/config";
+import { getAccountDetails } from "./Profile.js";
 
 async function getProducts(){
     try {
@@ -101,7 +102,7 @@ function showModal(message) {
 
 const productForm = document.getElementById('productForm');
 
-function handleRequests(event){
+async function handleRequests(event){
 
     const productName = document.getElementById('productName').value.trim();
     const price = parseFloat(document.getElementById('price').value);
@@ -115,10 +116,13 @@ function handleRequests(event){
         return;
     }
 
+    const accountDetails = await getAccountDetails();
+
     const productData = {
         name: productName,
         price: price,
-        quantity: quantity
+        quantity: quantity,
+        userId: accountDetails.userId
     };
 
     databases.createDocument(config.DATABASE_ID,config.SALES_COLLECTION_ID, 'unique()', productData)

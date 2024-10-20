@@ -26,7 +26,7 @@ function isAdmin(user) {
     return user.role === "admin";
 }
 
-async function handleAction(requestId, action) {
+async function handleAction(requestId, action, currentUser) {
     const inventoryRequests = await getRequests();
 
     const request = inventoryRequests.find(req => req.$id === requestId);
@@ -38,9 +38,12 @@ async function handleAction(requestId, action) {
                 config.DATABASE_ID,
                 config.SALES_COLLECTION_ID,
                 request.$id,
-                { status: request.status }  
+                { 
+                    status: request.status,
+                    userId: currentUser.userId
+                }  
             );
-            console.log(`Request ${requestId} has been ${request.status}`);
+            console.log(`Request ${requestId} by userId: ${currentUser.userId} has been ${request.status}`);
         } catch (error) {
             console.error('Failed to update request status:', error);
         }
@@ -50,7 +53,7 @@ async function handleAction(requestId, action) {
     }
 }
 
-async function renderRequests(requests) {
+async function renderRequests(requests, currentUser) {
     const tableBody = document.querySelector("#request-table tbody");
 
     if (!tableBody) {
@@ -77,12 +80,12 @@ async function renderRequests(requests) {
             const acceptButton = document.createElement("button");
             acceptButton.classList.add("action-btn", "accept-btn");
             acceptButton.textContent = "Accept";
-            acceptButton.addEventListener("click", () => handleAction(request.$id, "accept"));
+            acceptButton.addEventListener("click", () => handleAction(request.$id, "accept", currentUser));
 
             const rejectButton = document.createElement("button");
             rejectButton.classList.add("action-btn", "reject-btn");
             rejectButton.textContent = "Reject";
-            rejectButton.addEventListener("click", () => handleAction(request.$id, "reject"));
+            rejectButton.addEventListener("click", () => handleAction(request.$id, "reject", currentUser));
 
             const actionsCell = document.createElement("td");
             actionsCell.appendChild(acceptButton);
@@ -114,7 +117,7 @@ async function showPageForAdmin() {
         adminSection.classList.remove("hidden");
 
         const inventoryRequests = await getRequests();
-        renderRequests(inventoryRequests);
+        renderRequests(inventoryRequests,currentUser);
     } else {
         noAccessSection.classList.remove("hidden");
     }
