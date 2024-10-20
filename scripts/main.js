@@ -21,17 +21,21 @@ async function checkSession() {
 
 document.addEventListener('DOMContentLoaded', async () => {
     const loginBtn = document.getElementById('login-btn');
-    
+    const signupBtn = document.getElementById('signup-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+
 
     const isLoggedIn = await checkSession();
-    console.log('is logged in:', isLoggedIn);
+    console.log('In gayab wala function in main.js is logged in: ', isLoggedIn);
     
     if(isLoggedIn){
         loginBtn.style.display = 'none';
+        signupBtn.style.display = 'none';
+        logoutBtn.style.display = 'block';
     }
     else{
         loginBtn.style.display = 'block';
+        signupBtn.style.display = 'block';
+        logoutBtn.style.display = 'none';
     }
-
-
 });

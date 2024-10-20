@@ -8,13 +8,22 @@
 </head>
 <body>
 
+    <!-- Fixed Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html">
+                <button class="home-btn">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </a>
+        </div>
+    </header>
+
     <!-- Admin Inventory Requests Page -->
     <div class="container">
         <!-- This section is shown only to admins -->
         <div id="admin-section" class="hidden">
-            <header>
-                <h1>Inventory Requests</h1>
-            </header>
+            <h1>Inventory Requests</h1>
             <table id="request-table">
                 <thead>
                     <tr>
@@ -39,8 +48,12 @@
         <div id="not-loggedIn" class="hidden">
             <p>Please log in to view this page.</p>
         </div>
-         
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 EaseMart</p>
+    </footer>
 
     <script type="module" src="../scripts/Request_accept.js"></script>
 </body>

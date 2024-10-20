@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management System</title>
     <link rel="stylesheet" href="./src/style.css">
-    <link rel="icon" href="assets/icons8-factory-50.png" type="image/png">
+    <link rel="icon" href="assets/icons8-factory-50.png" 
+    type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -16,9 +18,10 @@
         <div class="header-container">
             <h1>EaseMart</h1>
             <div class="auth-buttons">
-                <button class="login-btn"><a href="./src/Login.html">Login</a></button>
-                <button class="signup-btn">Sign Up</button>
+                <button class="login-btn" id="login-btn"><a href="./src/Login.html">LogIn</a></button>
+                <button class="login-btn" id="signup-btn"><a href="./src/SignUp.html">SignUp</a></button>
             </div>
+            <button class="logout-btn" id="logout-btn">Logout</button>
         </div>
     </header>
     <!-- Sidebar and Main Content -->
@@ -41,14 +44,14 @@
                 <li class="dropdown">
                     <a href="#">Products</a>
                     <ul class="dropdown-menu">
-                        <li id="Add-Product"><a href="./src/Products.html" target="_blank">Add Product</a></li>
-                        <li><a href="./src/view_products.html" target="_blank">View Products</a></li>
+                        <li id="Add-Product"><a href="./src/Products.html">Add Product</a></li>
+                        <li><a href="./src/view_products.html">View Products</a></li>
                     </ul>
                 </li>
                 <li><a href="src/Request.html">Request Inventory</a></li>
                 <li><a href="src/Request_accept.html">Manage Request</a></li>
             </ul>
-            <button class="logout-btn" id="logout-btn">Logout</button>
+            <!-- <button class="logout-btn" id="logout-btn">Logout</button> -->
         </div>
         <!-- Main Content -->
         <main>
@@ -71,16 +74,19 @@
                         <img src="assets/cart-check-svgrepo-com.svg" alt="Track Inventory">
                         <h3>Order Inventory</h3>
                         <p>Easily order products for your outlet.</p>
+                        <button class="redirect"><a href="./src/Request.html">Go to order page <i class="fas fa-arrow-right"></i></a></button>
                     </div>
                     <div class="card">
                         <img src="assets/user-management-svgrepo-com.svg" alt="User Management">
                         <h3>User Management</h3>
                         <p>Manage user roles and access within the system.</p>
+                        <button class="redirect"><a href="">Go to order page <i class="fas fa-arrow-right"></i></a></button>
                     </div>
                     <div class="card">
                         <img src="assets/products-svgrepo-com.svg" alt="Sales Reports">
                         <h3>View inventory</h3>
                         <p>View all available products with us.</p>
+                        <button class="redirect"><a href="./src/view_products.html">Go to view product page <i class="fas fa-arrow-right"></i></a></button>
                     </div>
                 </div>
             </div>

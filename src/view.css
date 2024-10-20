@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f2f5;
     margin: 0;
-    padding: 20px;
+    padding: 80px 20px 20px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,10 +104,14 @@ header {
     padding: 15px;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Aligns all children (including the logo) to the right */
+    justify-content: flex-start;
     width: 100%;
-    top: 0;
     z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
 }
 
 .Logo {
@@ -119,12 +123,10 @@ header {
 .header-content {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .home-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
     padding: 10px 20px;
     background-color: #636274;
     color: white;
@@ -134,7 +136,7 @@ header {
     font-size: 14px;
     display: flex;
     align-items: center;
-    margin-top: 36px;
+    margin-left: 10px;
 }
 
 .home-btn i, .home-icon {
@@ -144,3 +146,9 @@ header {
 .home-btn:hover {
     background-color: #3b82f6;
 }
+
+.header-content {
+    display: flex;
+    align-items: center;
+    padding: 26px;
+  }

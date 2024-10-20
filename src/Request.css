@@ -320,3 +320,9 @@ footer{
     text-decoration: none;
     cursor: pointer;
 }
+
+.header-content {
+    display: flex;
+    align-items: center;
+    padding: 26px;
+  }
