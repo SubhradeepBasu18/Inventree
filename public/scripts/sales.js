@@ -1,5 +1,5 @@
-import { databases } from '../../appwrite/app.js';
-import { config } from '../../appwrite/config.js';
+import { databases } from '../appwrite/app.js';
+import { config } from '../appwrite/config.js';
 
 export function addSale(productId, date, quantitySold, totalPrice) {
     const salesData = {

@@ -1,4 +1,4 @@
-import { account } from "../../appwrite/app.js";
+import { account } from "../appwrite/app.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const logoutBtn = document.getElementById('logout-btn');

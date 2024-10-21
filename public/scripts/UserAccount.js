@@ -1,6 +1,6 @@
 import { Query } from "appwrite";
-import { databases } from "../../appwrite/app.js";
-import { config } from "../../appwrite/config.js";
+import { databases } from "../appwrite/app.js";
+import { config } from "../appwrite/config.js";
 import { getAccountDetails } from "./Profile.js";
 
 async function getOrderDetails(userId) {

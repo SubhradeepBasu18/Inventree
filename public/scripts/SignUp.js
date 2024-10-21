@@ -1,7 +1,7 @@
-import { account, client, databases } from "../../appwrite/app.js";
+import { account, client, databases } from "../appwrite/app.js";
 import {v4 as uuidv4} from 'uuid';
 import { Users } from "node-appwrite";
-import { config } from "../../appwrite/config.js";
+import { config } from "../appwrite/config.js";
 
 const users = new Users(client);
 

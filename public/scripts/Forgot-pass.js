@@ -1,4 +1,4 @@
-import { account } from "../../appwrite/app";
+import { account } from "../appwrite/app";
 
 // import { account } from "../appwrite/app";
 

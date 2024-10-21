@@ -1,5 +1,5 @@
-import { databases } from "../../appwrite/app";
-import { config } from "../../appwrite/config";
+import { databases } from "../appwrite/app";
+import { config } from "../appwrite/config";
 
 export async function getProducts(){
     try {
