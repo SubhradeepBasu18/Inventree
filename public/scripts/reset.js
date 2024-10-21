@@ -1,4 +1,4 @@
-import { account } from "../appwrite/app";
+import { account } from "../../appwrite/app";
 
 function getUrlParameter(name) {
     const params = new URLSearchParams(window.location.search);

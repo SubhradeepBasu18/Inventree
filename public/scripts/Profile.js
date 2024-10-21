@@ -1,5 +1,5 @@
-import { account, databases } from "../appwrite/app.js";
-import { config } from "../appwrite/config.js";
+import { account, databases } from "../../appwrite/app.js";
+import { config } from "../../appwrite/config.js";
 import { Query } from "appwrite";
 
 async function getAccountDetails() {

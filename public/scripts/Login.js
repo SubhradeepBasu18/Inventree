@@ -2,6 +2,7 @@ import { Query } from "appwrite";
 import { account, databases } from "../appwrite/app.js";
 import { config } from "../appwrite/config.js";
 
+
 function showModal(message) {
     const modal = document.getElementById('customModal');
     const closeButton = document.querySelector('.close');

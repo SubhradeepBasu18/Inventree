@@ -1,4 +1,6 @@
-import { account } from "../appwrite/app";
+import { account } from "../../appwrite/app";
+
+// import { account } from "../appwrite/app";
 
 function forgotPassword(email){
     const url = "http://localhost:5173/src/Reset.html"

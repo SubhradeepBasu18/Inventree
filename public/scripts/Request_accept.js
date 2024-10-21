@@ -1,6 +1,6 @@
-import { databases } from "../appwrite/app";
-import { config } from "../appwrite/config";
-import { getAccount } from "./Login";
+import { databases } from "../../appwrite/app";
+import { config } from "../../appwrite/config";
+import { getAccount } from "/Login";
 
 // Fetch inventory requests from the database
 async function getRequests() {

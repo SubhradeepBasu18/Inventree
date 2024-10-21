@@ -1,8 +1,7 @@
-import './charts.js';
 import './sidebar.js';
 import './Profile.js';
 import './Signout.js';
-import { account} from "../appwrite/app.js";
+import { account } from "../../appwrite/app";
 
 async function checkSession() {
     try {
