@@ -1,6 +1,6 @@
 import { databases } from "../appwrite/app";
 import { config } from "../appwrite/config";
-import { getAccount } from "/Login";
+import { getAccount } from "./Login.js";
 
 // Fetch inventory requests from the database
 async function getRequests() {
