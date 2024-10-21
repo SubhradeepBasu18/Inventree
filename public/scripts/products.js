@@ -1,6 +1,6 @@
 import { account, databases } from "../appwrite/app.js";
 import { config } from '../appwrite/config.js';
-import { checkSession, getAccount } from '/Login.js';
+import { checkSession, getAccount } from './Login.js';
 
 function showModal(message) {
     const modal = document.getElementById('customModal');
