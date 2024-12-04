@@ -34,7 +34,7 @@ function renderProductCards(products){
             <div class="product-info">
                 <div class="product-name">${item.name}</div>
                 <div class="product-quantity">Quantity: ${item.quantity}</div>
-                <div class="product-price">$${item.price}</div>
+                <div class="product-price">₹${item.price}</div>
             </div>
         `
         container.appendChild(card);

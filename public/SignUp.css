@@ -1,11 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    position: relative;
 }
 
 .container {
@@ -13,6 +11,7 @@ body {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 60px;
 }
 
 .signup-header {
@@ -152,3 +151,36 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.home-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #636274;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.home-btn i, .home-icon {
+    margin-right: 8px;
+}
+
+.home-btn:hover {
+    background-color: #3b82f6;
+}
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+}
+
