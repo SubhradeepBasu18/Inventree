@@ -5,6 +5,31 @@ import { config } from "../appwrite/config.js";
 
 const users = new Users(client);
 
+function showModal(message) {
+    const modal = document.getElementById('customModal');
+    const closeButton = document.querySelector('.close');
+    const modalMessage = document.getElementById('modalMessage');
+
+    // Set the message in the modal
+    modalMessage.textContent = message;
+
+    // Display the modal
+    modal.style.display = 'block';
+
+    // Close the modal when the user clicks on the close button
+    closeButton.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // Close the modal when the user clicks outside of it
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
+
 function handleSignUp() {
     const signupform = document.getElementById('signup-form')
     if(!signupform){
@@ -34,14 +59,18 @@ function handleSignUp() {
             assignUserLabel(userId, selectedRole);
             if(response.role == 'admin'){
                 console.log('Admin logged in');
-                alert('Admin created successfully');
+                showModal('Admin created successfully');
                 // Redirect to admin page
             }else{
                 console.log('User logged in');
-                alert('User created successfully');
+                showModal('User created successfully');
                 // Redirect to user page
                 // window.location.href = '../index.html';
             }
+        })
+        .catch(function(error){
+            console.error('Signup failed:',error);
+            showModal('Signup failed! Please try again!');
         })
 
         signupform.reset();
